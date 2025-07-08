@@ -1,6 +1,6 @@
 using Overkill.Reader;
 
-namespace Overkill;
+namespace Overkill.Provider;
 
 public class IntProvider(IReader<string> reader) : IProvider<int>
 {

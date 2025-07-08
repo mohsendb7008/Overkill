@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Provider;
 
 public interface IProvider<T>
 {
