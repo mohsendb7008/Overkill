@@ -1,3 +1,5 @@
+using Overkill.Comparer;
+
 namespace Overkill;
 
 public class MagicalMultiplier(IComparer<int, int> comparer) : IMultiplier<int, int, int>

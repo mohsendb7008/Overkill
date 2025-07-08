@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Comparer;
 
 public enum CompareResults
 {

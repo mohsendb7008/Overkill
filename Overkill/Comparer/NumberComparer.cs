@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Comparer;
 
 public class NumberComparer : IComparer<int, int>
 {
@@ -12,4 +12,6 @@ public class NumberComparer : IComparer<int, int>
             return CompareResults.EqualTo;
         return CompareResults.InComparable;
     }
+
+    public Task<CompareResults> CompareAsync(int item1, int item2) => Task.FromResult(Compare(item1, item2));
 }

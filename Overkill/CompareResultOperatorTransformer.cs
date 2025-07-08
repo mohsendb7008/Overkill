@@ -1,3 +1,5 @@
+using Overkill.Comparer;
+
 namespace Overkill;
 
 public class CompareResultOperatorTransformer : ITransformer<CompareResults, char>
