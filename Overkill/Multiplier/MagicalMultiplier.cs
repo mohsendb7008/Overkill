@@ -1,6 +1,7 @@
 using Overkill.Comparer;
+using Overkill.Exception;
 
-namespace Overkill;
+namespace Overkill.Multiplier;
 
 public class MagicalMultiplier(IComparer<int, int> comparer) : IMultiplier<int, int, int>
 {
@@ -12,8 +13,10 @@ public class MagicalMultiplier(IComparer<int, int> comparer) : IMultiplier<int, 
             CompareResults.EqualTo => 0,
             CompareResults.LessThan => -(item1 * item2),
             CompareResults.GreaterThan => item1 * item2,
-            CompareResults.InComparable => throw new NotImplementedException(),
-            _ => throw new NotImplementedException()
+            CompareResults.InComparable => throw new InvalidArgumentException(""),
+            _ => throw new InvalidArgumentException("")
         };
     }
+
+    public Task<int> MultiplyAsync(int item1, int item2) => Task.FromResult(Multiply(item1, item2));
 }
