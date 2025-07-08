@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Looper;
 
 public class ForLooper : ILooper
 {
@@ -6,5 +6,11 @@ public class ForLooper : ILooper
     {
         for (var i = from; i <= to; i++)
             forEach.Invoke(i);
+    }
+
+    public Task LoopAsync(int from, int to, Action<int> forEach)
+    {
+        Loop(from, to, forEach);
+        return Task.CompletedTask;
     }
 }
