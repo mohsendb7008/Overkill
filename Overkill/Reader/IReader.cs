@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Reader;
 
 public interface IReader<T>
 {

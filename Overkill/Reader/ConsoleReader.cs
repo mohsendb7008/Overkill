@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Reader;
 
 public class ConsoleReader : IReader<string>
 {
