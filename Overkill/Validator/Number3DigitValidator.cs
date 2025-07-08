@@ -1,3 +1,5 @@
+using Overkill.Exception;
+
 namespace Overkill.Validator;
 
 public class Number3DigitValidator : IValidator<int>
