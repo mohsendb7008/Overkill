@@ -8,6 +8,6 @@ public class Number3DigitValidator : IValidator<int>
     public void ValidateOrThrow(int item)
     {
         if (!Validate(item))
-            throw new InvalidArgumentException("Provided number is not a valid 3 digit number.");
+            throw new InvalidArgumentException("Item is not a 3 digit number");
     }
 }
