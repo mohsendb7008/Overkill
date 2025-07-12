@@ -1,7 +1,6 @@
 namespace Overkill.Reader;
 
-public interface IReader<T>
+public interface IReader<out T>
 {
     T Read();
-    Task<T> ReadAsync();
 }
