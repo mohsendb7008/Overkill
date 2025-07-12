@@ -8,6 +8,4 @@ public class NumberReverseTransformer : ITransformer<int, int>
         var outputString = string.Join("", inputString.Reverse());
         return int.Parse(outputString);
     }
-
-    public Task<int> TransformAsync(int input) => Task.FromResult(Transform(input));
 }

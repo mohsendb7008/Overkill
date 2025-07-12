@@ -16,6 +16,4 @@ public class CompareResultOperatorTransformer : ITransformer<CompareResults, cha
             _ => throw new InvalidArgumentException("Operator not found for this compare result.")
         };
     }
-
-    public Task<char> TransformAsync(CompareResults input) => Task.FromResult(Transform(input));
 }
