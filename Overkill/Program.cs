@@ -1,20 +1,42 @@
-﻿using Overkill.Reader;
-using Overkill.Transformer;
-using Overkill.Validator;
+﻿using Overkill.Collection;
 
-var reader = new ConsoleReader();
-var equation = reader.Read();
-var equationTransformer = new SimpleEquationTransformer();
-var variables = equationTransformer.Transform(equation);
-var hiddenTransformer = new HiddenEquationNumberTransformer(new NumberDigitRangeHiddenValidator());
-var hiddenNumber = hiddenTransformer.Transform(variables);
-var hiddenRangeMatch = new NumberDigitRangeMatchValidator();
-if (!hiddenRangeMatch.Validate((variables[hiddenNumber.Item1], hiddenNumber.Item2)))
+var magicList = new MagicList();
+string input;
+do
 {
-    Console.WriteLine("-1");
-}
-else
-{
-    variables[hiddenNumber.Item1] = hiddenNumber.Item2.ToString();
-    Console.WriteLine($"{variables[0]} + {variables[1]} = {variables[2]}");
-}
+    input = Console.ReadLine()!;
+    var split = input.Split(" ");
+    switch (split[0])
+    {
+        case "1":
+            magicList.Init();
+            break;
+        case "2":
+            magicList.Null();
+            break;
+        case "3":
+        {
+            var success = magicList.Add(int.Parse(split[1]));
+            if (!success)
+                Console.WriteLine("nulle");
+            break;
+        }
+        case "4":
+            Console.WriteLine(magicList.Get(int.Parse(split[1])));
+            break;
+        case "5":
+        {
+            var m = int.Parse(split[1]);
+            var n = int.Parse(split[2]);
+            try
+            {
+                Console.WriteLine(m / n);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("sefre");
+            }
+            break;
+        }
+    }
+} while(!input.Equals("6"));
