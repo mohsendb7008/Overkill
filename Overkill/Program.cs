@@ -1,7 +1,13 @@
-﻿using Delegate = Overkill.Delegate.Delegate;
+﻿using Overkill.Event;
 
-var delegate1 = new Delegate(Console.WriteLine,
-    (value1, value2) => value1 == value2,
-    (value1, value2) => value1 + value2);
-delegate1.InvokeAll(3, 3);
-delegate1.InvokeAll(3, 2);
+var room = new Room();
+var nurseStation = new NurseStation();
+var patientAdmissionDesk = new PatientAdmissionDesk();
+
+room.RoomAvailable += nurseStation.OnRoomAvailable;
+room.RoomAvailable += patientAdmissionDesk.OnRoomAvailable;
+
+room.MarkRoomAvailable();
+
+room.RoomAvailable -= patientAdmissionDesk.OnRoomAvailable;
+room.RoomAvailable -= nurseStation.OnRoomAvailable;
