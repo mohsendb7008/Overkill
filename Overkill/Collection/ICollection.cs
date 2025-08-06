@@ -6,4 +6,5 @@ public interface ICollection<T>
     public int Count { get; }
     public void Clear();
     public T? Get(int index);
+    public void Pop();
 }

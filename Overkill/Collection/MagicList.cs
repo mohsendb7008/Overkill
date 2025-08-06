@@ -1,50 +1,28 @@
 namespace Overkill.Collection;
 
-public class MagicList
+public class MagicList<T> : ListWrapper<T>
 {
-    private List<int>? _list;
-
-    public MagicList()
+    public MagicList(int initialCount = 3)
     {
-        Init();
-    }
-
-    public void Init()
-    {
-        _list = new List<int>(3);
+        for (var i = 0; i < initialCount; i++)
+            base.Add(default);
     }
 
     public void Null()
     {
-        _list = null;
+        List = null!;
     }
 
-    public bool Add(int m)
+    public new bool Add(T item)
     {
         try
         {
-            _list!.Add(m);
+            Add(item);
         }
         catch (NullReferenceException)
         {
             return false;
         }
         return true;
-    }
-
-    public string Get(int n)
-    {
-        try
-        {
-            return _list![n].ToString();
-        }
-        catch (NullReferenceException)
-        {
-            return "nulle";
-        }
-        catch (ArgumentOutOfRangeException)
-        {
-            return "oute";
-        }
     }
 }

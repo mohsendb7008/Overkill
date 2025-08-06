@@ -1,4 +1,4 @@
-namespace Overkill.Collection;
+namespace Overkill.Teams;
 
 public class TeamProcessor
 {
