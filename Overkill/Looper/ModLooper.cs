@@ -7,10 +7,4 @@ public class ModLooper : ILooper
         for (var i = 0; i < to; i++)
             forEach.Invoke((i + from) % to);
     }
-
-    public Task LoopAsync(int from, int to, Action<int> forEach)
-    {
-        Loop(from, to, forEach);
-        return Task.CompletedTask;
-    }
 }
