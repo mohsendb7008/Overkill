@@ -1,4 +1,4 @@
-namespace Overkill.Examiner;
+namespace Overkill.Domains.Examiner;
 
 public class Product(int id, int size, int pressureTolerance, int colorTransparency)
 {

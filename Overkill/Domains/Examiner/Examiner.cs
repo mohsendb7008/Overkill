@@ -1,6 +1,6 @@
-using Overkill.Examiner.Exception;
+using Overkill.Domains.Examiner.Exception;
 
-namespace Overkill.Examiner;
+namespace Overkill.Domains.Examiner;
 
 public class Examiner
 {
