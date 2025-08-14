@@ -1,4 +1,4 @@
-namespace Overkill.Delegate;
+namespace Overkill.Domains;
 
 public delegate void Action();
 public delegate void Action<in T1>(T1 arg1);

@@ -1,4 +1,4 @@
-namespace Overkill;
+namespace Overkill.Domains;
 
 public class TradeRecord(int quantity, decimal pricePerUnit)
 {

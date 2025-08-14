@@ -1,4 +1,4 @@
-﻿using Overkill.Event;
+﻿using Overkill.Domains.Event;
 
 var room = new Room();
 var nurseStation = new NurseStation();
