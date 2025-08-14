@@ -1,4 +1,4 @@
-namespace Overkill.Vehicle;
+namespace Overkill.Domains.Vehicle;
 
 public class Airplane(
    string name,

@@ -1,4 +1,4 @@
-namespace Overkill.Vehicle;
+namespace Overkill.Domains.Vehicle;
 
 public class Vehicle(string name, decimal price, int numberOfSeats, int maxSpeed)
    : object

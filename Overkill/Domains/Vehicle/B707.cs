@@ -1,4 +1,4 @@
-namespace Overkill.Vehicle;
+namespace Overkill.Domains.Vehicle;
 
 public sealed class B707(
     string name,
