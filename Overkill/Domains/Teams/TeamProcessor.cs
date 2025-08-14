@@ -1,10 +1,10 @@
-namespace Overkill.Teams;
+namespace Overkill.Domains.Teams;
 
 public class TeamProcessor
 {
     private readonly List<TeamMember> _members = [];
 
-    private class TeamMemberComparer(Func<TeamMember, TeamMember, int> comparer) : IComparer<TeamMember>
+    private class TeamMemberComparer(System.Func<TeamMember, TeamMember, int> comparer) : IComparer<TeamMember>
     {
         public int Compare(TeamMember? x, TeamMember? y)
         {
@@ -14,12 +14,12 @@ public class TeamProcessor
         }
     }
     
-    public void SortMembers(Func<TeamMember, TeamMember, int> comparison)
+    public void SortMembers(System.Func<TeamMember, TeamMember, int> comparison)
     {
         _members.Sort(new TeamMemberComparer(comparison));
     }
 
-    public List<TeamMember> FilterMembers(Func<TeamMember, bool> condition)
+    public List<TeamMember> FilterMembers(System.Func<TeamMember, bool> condition)
     {
         return _members.Where(condition).ToList();
     }

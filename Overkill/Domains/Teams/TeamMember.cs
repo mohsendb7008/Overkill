@@ -1,4 +1,4 @@
-namespace Overkill.Teams;
+namespace Overkill.Domains.Teams;
 
 public class TeamMember(string name, int tasksCompleted, int yearsOfExperience)
 {
