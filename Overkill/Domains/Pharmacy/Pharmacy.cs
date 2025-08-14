@@ -1,4 +1,4 @@
-namespace Overkill.Pharmacy;
+namespace Overkill.Domains.Pharmacy;
 
 public class Pharmacy(string name)
 {
