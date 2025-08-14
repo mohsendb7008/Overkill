@@ -1,4 +1,4 @@
-namespace Overkill.Event;
+namespace Overkill.Domains.Event;
 
 public class Room
 {
