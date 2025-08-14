@@ -1,7 +1,6 @@
 namespace Overkill.Provider;
 
-public interface IProvider<T>
+public interface IProvider<out T>
 {
     T Get();
-    Task<T> GetAsync();
 }
