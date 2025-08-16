@@ -1,13 +1,10 @@
-﻿using Overkill.Domains.Event;
+﻿var anonymousObject1 = new { Name = "AnonymousObject1" };
+var anonymousObject2 = new { Name = "AnonymousObject2" };
+Console.WriteLine(anonymousObject1.GetType());
+Console.WriteLine(anonymousObject1.GetType() == anonymousObject2.GetType());
 
-var room = new Room();
-var nurseStation = new NurseStation();
-var patientAdmissionDesk = new PatientAdmissionDesk();
-
-room.RoomAvailable += nurseStation.OnRoomAvailable;
-room.RoomAvailable += patientAdmissionDesk.OnRoomAvailable;
-
-room.MarkRoomAvailable();
-
-room.RoomAvailable -= patientAdmissionDesk.OnRoomAvailable;
-room.RoomAvailable -= nurseStation.OnRoomAvailable;
+dynamic dynamicObject1 = 10;
+Console.WriteLine(dynamicObject1.GetType());
+dynamic dynamicObject2 = anonymousObject2;
+Console.WriteLine(dynamicObject2.GetType());
+dynamicObject2.Name = "DynamicObject2";
