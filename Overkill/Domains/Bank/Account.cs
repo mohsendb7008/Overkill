@@ -1,28 +1,22 @@
 ﻿namespace Overkill.Domains.Bank;
 
-public abstract class Account
+public abstract class Account()
 {
     public decimal Amount { get; set; }
-    public Guid AccountId { get; set; }
-    public DateTime CreateDate { get; set; }
+    public Guid AccountId { get; set; } = Guid.NewGuid();
+    public DateTime CreateDate { get; set; } = DateTime.Now;
     public string FirstName { get; set; }
     public string LastName { get; set; }
-    public string NationalID { get; set; }
+    public string NationalId { get; set; }
     public string PhoneNumber { get; set; }
     public string Email { get; set; }
     public DateTime DateOfBirth { get; set; }
-
-    public Account()
-    {
-        AccountId = Guid.NewGuid();
-        CreateDate = DateTime.Now;
-    }
 
     public Account(
         decimal amount,
         string firstName,
         string lastName,
-        string nationalID,
+        string nationalId,
         string phoneNumber,
         string email,
         DateTime dateOfBirth
@@ -31,7 +25,7 @@ public abstract class Account
         Amount = amount;
         FirstName = firstName;
         LastName = lastName;
-        NationalID = nationalID;
+        NationalId = nationalId;
         PhoneNumber = phoneNumber;
         Email = email;
         DateOfBirth = dateOfBirth;

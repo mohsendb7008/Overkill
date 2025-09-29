@@ -1,27 +1,17 @@
 ﻿namespace Overkill.Domains.Bank;
 
-public class QarzAlHasanahAccount : Account
+public class QarzAlHasanahAccount(
+    decimal amount,
+    string firstName,
+    string lastName,
+    string nationalId,
+    string phoneNumber,
+    string email,
+    DateTime dateOfBirth,
+    BankCard bankCard)
+    : Account(amount, firstName, lastName, nationalId, phoneNumber, email, dateOfBirth)
 {
-    public BankCard BankCard { get; set; }
-
-    public QarzAlHasanahAccount(BankCard bankCard) : base()
-    {
-        BankCard = bankCard;
-    }
-
-    public QarzAlHasanahAccount(
-        decimal amount,
-        string firstName,
-        string lastName,
-        string nationalID,
-        string phoneNumber,
-        string email,
-        DateTime dateOfBirth,
-        BankCard bankCard
-    ) : base(amount, firstName, lastName, nationalID, phoneNumber, email, dateOfBirth)
-    {
-        BankCard = bankCard;
-    }
+    public BankCard BankCard { get; set; } = bankCard;
 
     public override string GetAccountType()
     {

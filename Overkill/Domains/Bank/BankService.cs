@@ -4,7 +4,7 @@ namespace Overkill.Domains.Bank;
 
 public class BankService
 {
-    private List<Account> _accounts = new List<Account>();
+    private readonly List<Account> _accounts = [];
 
     public void CreateAccount(Account account)
     {
@@ -15,7 +15,7 @@ public class BankService
         }
 
         if (account is CurrentAccount ca && _accounts.Where(a => a is CurrentAccount).Cast<CurrentAccount>()
-                .Any(a => a.NationalID == ca.NationalID))
+                .Any(a => a.NationalId == ca.NationalId))
         {
             Console.WriteLine("[ERROR] There is a current account for this national id");
             return;
