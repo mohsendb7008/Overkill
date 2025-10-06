@@ -10,6 +10,9 @@ public class Book(string title, string isbn, int publicationYear)
     [JsonPropertyName("isbn")]
     public string ISBN { get; set; } = isbn;
 
+    [JsonPropertyName("category")]
+    public string Category { get; set; }
+
     [JsonPropertyName("publication_year")]
     public int PublicationYear { get; set; } = publicationYear;
 
