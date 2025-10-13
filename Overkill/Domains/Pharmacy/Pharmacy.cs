@@ -1,20 +1,12 @@
 namespace Overkill.Domains.Pharmacy;
 
-public class Pharmacy(string name)
+public class Pharmacy
 {
-    public string Name { get; set; } = name;
-    private List<Drug> Drugs { get; set; } = new();
-    private List<Employee> Employees { get; set; } = new();
-
-    public void AddDrug(Drug drug)
-    {
-        Drugs.Add(drug);
-    }
-
-    public void AddEmployee(Employee employee)
-    {
-        Employees.Add(employee);
-    }
+    public int PharmacyId { get; set; }
+    public string Name { get; set; }
+    public string Location { get; set; }
+    public ICollection<Drug> Drugs { get; set; }
+    public ICollection<Employee> Employees { get; set; }
 
     public int TotalPrice()
     {

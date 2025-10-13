@@ -1,8 +1,11 @@
 namespace Overkill.Domains.Pharmacy;
 
-public class Employee(string firstName, string lastName, int age)
+public class Employee
 {
-    public string FirstName { get; set; } = firstName;
-    public string LastName { get; set; } = lastName;
-    public int Age { get; set; } = age;
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+    public int PharmacyId { get; set; }
+    public Pharmacy Pharmacy { get; set; }
 }
